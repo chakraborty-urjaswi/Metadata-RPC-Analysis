@@ -7,7 +7,7 @@ BASE_URL = "http://72.60.221.150:8080"
 STUDENT_ID = "MDS202539" 
 
 def get_secret_key():
-    """Step 1: Geting the dynamic 64-character SHA256 key"""
+  
     while True:
         try:
             r = requests.post(f"{BASE_URL}/login", json={"student_id": STUDENT_ID})
@@ -16,7 +16,7 @@ def get_secret_key():
         except: time.sleep(1)
 
 def mapper(chunk):
-    """Step 2: Map phase - Fetch titles and count first words"""
+ 
     key = get_secret_key()
     counts = Counter()
     for filename in chunk:
